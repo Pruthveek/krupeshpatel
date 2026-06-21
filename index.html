@@ -1,0 +1,512 @@
+<!DOCTYPE html><html class="dark" lang="en"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Krupesh Patel | Chemical Engineer Portfolio</title>
+<!-- Sora Font -->
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "primary": "#8750f7",
+                    "on-primary": "#ffffff",
+                    "background": "#0f0715",
+                    "surface": "#140c1c",
+                    "surface-container": "#2a1454",
+                    "on-surface": "#e5e2e1",
+                    "on-surface-variant": "#dddddd",
+                    "outline": "#2a1454"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "1rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "base": "8px",
+                    "gutter": "24px",
+                    "sm": "12px",
+                    "xl": "80px",
+                    "container-max": "1200px",
+                    "md": "24px",
+                    "xs": "4px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "body-md": ["Sora"],
+                    "body-lg": ["Sora"],
+                    "display-lg": ["Sora"],
+                    "label-md": ["Sora"],
+                    "headline-lg": ["Sora"],
+                    "headline-md": ["Sora"]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        html { scroll-behavior: smooth; scroll-padding-top: 110px; }
+        body { background-color: #0f0715; color: #ffffff; overflow-x: hidden; }
+        .gradient-text { background: linear-gradient(90deg, #8750f7, #ffffff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .purple-glow-bg { position: relative; }
+        .purple-glow-bg::before { content: ''; position: absolute; width: 400px; height: 400px; background: #8750f7; filter: blur(150px); opacity: 0.15; z-index: -1; top: 10%; right: 5%; pointer-events: none; }
+        .purple-glow-bg::after { content: ''; position: absolute; width: 300px; height: 300px; background: #8750f7; filter: blur(120px); opacity: 0.1; z-index: -1; bottom: 10%; left: 5%; pointer-events: none; }
+        
+        .service-item { border-bottom: 1px solid #2a1454; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+        .service-item:hover { background: linear-gradient(90deg, rgba(42, 20, 84, 0.5), transparent); transform: translateX(8px); }
+        
+        .timeline-card { background: #140c1c; border-radius: 1rem; padding: 1.5rem; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid transparent; }
+        @media (min-width: 640px) {
+            .timeline-card { padding: 2rem; }
+        }
+        .timeline-card:hover { border-color: #8750f7; background: #1a0f29; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(135, 80, 247, 0.15); }
+        
+        .nav-link { font-weight: 500; transition: color 0.3s; }
+        .nav-link:hover { color: #8750f7; }
+        
+        .btn-primary { background: linear-gradient(90deg, #8750f7, #2a1454); padding: 0.75rem 2rem; border-radius: 9999px; font-weight: 600; transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px rgba(135, 80, 247, 0.25); }
+        .btn-primary:active { transform: translateY(1px); }
+        
+        .project-card { position: relative; border-radius: 1rem; overflow: hidden; background: #140c1c; border: 1px solid #2a1454; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+        .project-card:hover { transform: translateY(-5px); border-color: #8750f7; box-shadow: 0 15px 35px rgba(135, 80, 247, 0.15); }
+        .project-card img { transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1); }
+        .project-card:hover img { transform: scale(1.05); }
+        .project-card:hover .project-overlay { opacity: 1; }
+        .project-overlay { position: absolute; inset: 0; background: rgba(135, 80, 247, 0.9); opacity: 0; transition: opacity 0.3s; display: flex; align-items: center; justify-content: center; }
+        
+        input, textarea { background: #0f0715; border: 1px solid #2a1454; border-radius: 0.5rem; padding: 1rem; color: white; width: 100%; outline: none; }
+        input:focus, textarea:focus { border-color: #8750f7; }
+
+        /* Scroll Reveal animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .scale-up {
+            opacity: 0;
+            transform: scale(0.95);
+            transition: opacity 0.8s cubic-bezier(0.25, 1, 0.5, 1), transform 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .scale-up.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* Staggered entry for children */
+        .stagger-children > * {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s cubic-bezier(0.25, 1, 0.5, 1), transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        .stagger-children.active > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .stagger-children.active > *:nth-child(1) { transition-delay: 80ms; }
+        .stagger-children.active > *:nth-child(2) { transition-delay: 160ms; }
+        .stagger-children.active > *:nth-child(3) { transition-delay: 240ms; }
+        .stagger-children.active > *:nth-child(4) { transition-delay: 320ms; }
+        .stagger-children.active > *:nth-child(5) { transition-delay: 400ms; }
+        .stagger-children.active > *:nth-child(6) { transition-delay: 480ms; }
+
+        /* Skill Cards */
+        .skill-card { transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
+        .skill-card:hover { transform: translateY(-8px); background: #2a1454; box-shadow: 0 10px 25px rgba(135, 80, 247, 0.2); }
+    </style>
+</head>
+<body class="font-body-md selection:bg-primary/30">
+<!-- Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#0f0715]/80 backdrop-blur-md">
+<div class="max-w-container-max mx-auto px-gutter py-6 flex justify-between items-center">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">K</div>
+<span class="font-bold text-lg hidden sm:inline">Krupeshpatel1255@gmail.com</span>
+</div>
+<nav class="hidden md:flex gap-10 items-center">
+<a class="nav-link" href="#hero">Services</a>
+<a class="nav-link" href="#works">Works</a>
+<a class="nav-link" href="#experience">Resume</a>
+<a class="nav-link" href="#skills">Skills</a>
+<a class="nav-link" href="#contact">Contact</a>
+<a class="btn-primary" href="#contact">Hire Me!</a>
+</nav>
+<button id="menu-btn" class="md:hidden text-white z-50 relative focus:outline-none" onclick="toggleMenu()">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+</header>
+<!-- Mobile Drawer Menu -->
+<div id="mobile-menu" class="fixed inset-0 z-40 bg-[#0f0715]/95 flex flex-col justify-center items-center gap-8 translate-x-full transition-transform duration-300 md:hidden">
+<a class="text-2xl font-semibold hover:text-primary transition-colors" href="#hero" onclick="toggleMenu()">Services</a>
+<a class="text-2xl font-semibold hover:text-primary transition-colors" href="#works" onclick="toggleMenu()">Works</a>
+<a class="text-2xl font-semibold hover:text-primary transition-colors" href="#experience" onclick="toggleMenu()">Resume</a>
+<a class="text-2xl font-semibold hover:text-primary transition-colors" href="#skills" onclick="toggleMenu()">Skills</a>
+<a class="text-2xl font-semibold hover:text-primary transition-colors" href="#contact" onclick="toggleMenu()">Contact</a>
+<a class="btn-primary text-xl" href="#contact" onclick="toggleMenu()">Hire Me!</a>
+</div>
+<main class="purple-glow-bg pt-32">
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-gutter mb-20 md:mb-32 flex flex-col md:flex-row items-center justify-between gap-10 md:gap-16" id="hero">
+<div class="flex-1 space-y-6 w-full reveal-left">
+<p class="text-2xl font-semibold text-white">I am Krupesh Patel</p>
+<h1 class="text-4xl sm:text-5xl md:text-7xl font-extrabold leading-tight gradient-text">
+                    Chemical Engineer + <br class="hidden md:inline">Sustainable Innovator
+                </h1>
+<p class="text-on-surface-variant text-lg max-w-xl">
+                    I transform chemical processes into sustainable solutions, bridging the gap between industrial efficiency and environmental stewardship through simulation and ML.
+                </p>
+<div class="grid grid-cols-2 sm:grid-cols-4 gap-6 md:gap-10 pt-8 stagger-children">
+<div>
+<div class="text-4xl font-bold">6.10</div>
+<div class="text-on-surface-variant text-sm uppercase tracking-wider">CGPA (10)</div>
+</div>
+<div>
+<div class="text-4xl font-bold">2</div>
+<div class="text-on-surface-variant text-sm uppercase tracking-wider">Ind. Trainings</div>
+</div>
+<div>
+<div class="text-4xl font-bold">2</div>
+<div class="text-on-surface-variant text-sm uppercase tracking-wider">Major Projects</div>
+</div>
+<div>
+<div class="text-4xl font-bold">4+</div>
+<div class="text-on-surface-variant text-sm uppercase tracking-wider">Core Skills</div>
+</div>
+</div>
+</div>
+<div class="flex-1 flex justify-center w-full reveal-right">
+<div class="relative group max-w-[450px] w-full">
+<div class="absolute -inset-4 bg-primary/20 blur-2xl rounded-[2rem] sm:rounded-[3rem] transition-all group-hover:bg-primary/30"></div>
+<img alt="Krupesh Patel" class="relative z-10 w-full h-auto rounded-[2rem] sm:rounded-[3rem] rotate-3 transition-transform group-hover:rotate-0 border-2 border-primary/20" src="https://lh3.googleusercontent.com/aida/AP1WRLtJLrnmZuaWLcg7vcFBBSE7uWMzWFAtqtqXY-7fmIAktJz_ei3cbuxDMYt8wE59_4rDxEF-quVxRaxlbcoAyDpdl8uupfLv1OxVAbTqLRitGTPWEKnDT70V09RSiImNlfClc4jAiQ8-ppFhdFN5W_Eg3TmOcw2CaEzEEMuRIQCmH9-Eiol26RvgOBrylYygYxow9cF7oVOfQ0_MvyvizRVQmndJLQXTFaeB0Q80LdxGHdF7_TVF7Ypl_P0">
+</div>
+</div>
+</section>
+<!-- Services Section -->
+<section class="bg-black/20 py-20 md:py-32 mb-20 md:mb-32">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="text-center mb-16 space-y-4 reveal">
+<h2 class="text-4xl md:text-5xl font-bold gradient-text">My Core Competencies</h2>
+<p class="text-on-surface-variant max-w-2xl mx-auto">Bridging theoretical knowledge with practical industrial applications for process optimization and environmental tech.</p>
+</div>
+<div class="space-y-0 stagger-children">
+<div class="service-item p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold text-primary">01</span>
+<h3 class="text-2xl font-bold">Process Engineering</h3>
+</div>
+<p class="md:max-w-md text-on-surface-variant">Expertise in Mass Balance, Heat Transfer, and Fluid Dynamics for optimized production units.</p>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+<div class="service-item p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold text-primary">02</span>
+<h3 class="text-2xl font-bold">Simulation &amp; Modeling</h3>
+</div>
+<p class="md:max-w-md text-on-surface-variant">Advanced modeling of chemical reactor outputs using Aspen Plus and MATLAB.</p>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+<div class="service-item p-8 flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold text-primary">03</span>
+<h3 class="text-2xl font-bold">Environmental Tech</h3>
+</div>
+<p class="md:max-w-md text-on-surface-variant">Focus on Green Hydrogen production and urban air pollutants prediction using ML.</p>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+<div class="service-item p-8 flex flex-col md:flex-row md:items-center justify-between gap-6 border-none">
+<div class="flex items-center gap-8">
+<span class="text-2xl font-bold text-primary">04</span>
+<h3 class="text-2xl font-bold">Data Science for Eng.</h3>
+</div>
+<p class="md:max-w-md text-on-surface-variant">Leveraging Python and Scikit-learn for high-accuracy industrial emission forecasting.</p>
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Works Section -->
+<section class="max-w-container-max mx-auto px-gutter mb-20 md:mb-32" id="works">
+<div class="text-center mb-16 reveal">
+<h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">My Recent Works</h2>
+<div class="flex justify-center gap-4">
+<button class="bg-primary text-white px-6 py-2 rounded-full font-semibold">All</button>
+<button class="text-on-surface-variant hover:text-white px-6 py-2 rounded-full font-semibold">Simulation</button>
+<button class="text-on-surface-variant hover:text-white px-6 py-2 rounded-full font-semibold">ML Modeling</button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 stagger-children">
+<!-- Project 1 -->
+<div class="project-card group">
+<img alt="Project 1" class="w-full aspect-video object-cover p-6 rounded-[2rem]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTw4c8_4burVIIqrhgqwOEiV0E0UlR28sZgrnZdnWjwNLEtOw93pGr6Y9kyRQU8Xbtn6g5QlcM_pDMXlAM9l7lrIkQ5VGYDc5LStu5J1zPi7zzuzHvh8bGuVftKlgP3l0NjMMNxC1MQtxSBU-yOQcBTknxj3_Y2IN5tmOpmkRkAebYTrg39InJoFp2mLzsmFZbsNrQ1fVOe5B9BYhnyfT4Zmab9q4baSH_MaUIOYHYTO7RqmXyDM_prrlbaBvPr6IedG6l5cFf87g">
+<div class="px-8 pb-8">
+<div class="flex justify-between items-center">
+<div>
+<h3 class="text-2xl font-bold">Green Hydrogen Simulation</h3>
+<p class="text-on-surface-variant">Aspen Plus / Sustainability</p>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">arrow_outward</span>
+</div>
+</div>
+<div class="project-overlay">
+<div class="text-center px-10">
+<h3 class="text-2xl font-bold mb-2">Simulation Study</h3>
+<p class="mb-6">Comprehensive model for electrolysis-based hydrogen production focusing on carbon footprint reduction.</p>
+<a class="bg-white text-primary px-8 py-3 rounded-full font-bold" href="#">View Project</a>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="project-card group">
+<img alt="Project 2" class="w-full aspect-video object-cover p-6 rounded-[2rem]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXCiLo0lI4s8wG6mdY5fppbLbZtaTbEMd4jLVjdJ6-OTnD79qfY3obU6OLta5LQszjg3FR-KbQ4bXd4226VooP_89fpRK9kY1cW14V3zpHlQm6njwX2WU_LmQdhtnyy4on-R0z5_JnZMX8mq8DhqtolPg2SLePOniRGdjFpCfTw-iLfOl6gjkOOkC4iEvNZ1wttme0R-skrzM6sMC24WJMeDd-sPHecahNK15MoPvcbTH4s7ulsixIdKpUSTvKq1DLyzhj3IWHefo">
+<div class="px-8 pb-8">
+<div class="flex justify-between items-center">
+<div>
+<h3 class="text-2xl font-bold">Air Pollutants Prediction</h3>
+<p class="text-on-surface-variant">Python / Machine Learning</p>
+</div>
+<span class="material-symbols-outlined text-primary text-3xl">arrow_outward</span>
+</div>
+</div>
+<div class="project-overlay">
+<div class="text-center px-10">
+<h3 class="text-2xl font-bold mb-2">ML Dashboard</h3>
+<p class="mb-6">Predicting urban air quality indexes with 98% accuracy using Scikit-learn algorithms.</p>
+<a class="bg-white text-primary px-8 py-3 rounded-full font-bold" href="#">View Project</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Experience & Education -->
+<section class="max-w-container-max mx-auto px-gutter mb-20 md:mb-32 grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16" id="experience">
+<div class="reveal-left">
+<div class="flex items-center gap-4 mb-10">
+<span class="material-symbols-outlined text-primary text-4xl">work</span>
+<h2 class="text-4xl font-bold">My Experience</h2>
+</div>
+<div class="space-y-6">
+<div class="timeline-card">
+<span class="text-primary font-bold">2023 - Present</span>
+<h3 class="text-xl font-bold mt-2">Industrial Trainee</h3>
+<p class="text-on-surface-variant text-sm">Lifecare Cosmetics</p>
+<p class="mt-4 text-on-surface-variant text-sm">Optimized process flows for large-scale cosmetic production units and conducted safety audits.</p>
+</div>
+<div class="timeline-card">
+<span class="text-primary font-bold">2022</span>
+<h3 class="text-xl font-bold mt-2">Industrial Trainee</h3>
+<p class="text-on-surface-variant text-sm">Shreeji Chem</p>
+<p class="mt-4 text-on-surface-variant text-sm">Monitored operational parameters and simulated chemical reactor outputs with modern tools.</p>
+</div>
+</div>
+</div>
+<div class="reveal-right">
+<div class="flex items-center gap-4 mb-10">
+<span class="material-symbols-outlined text-primary text-4xl">school</span>
+<h2 class="text-4xl font-bold">My Education</h2>
+</div>
+<div class="space-y-6">
+<div class="timeline-card">
+<span class="text-primary font-bold">2020 - 2024</span>
+<h3 class="text-xl font-bold mt-2">B.Tech in Chemical Engineering</h3>
+<p class="text-on-surface-variant text-sm">PDEU, Gandhinagar</p>
+<p class="mt-4 text-on-surface-variant text-sm">Focusing on sustainable process systems and industrial modeling with a 6.10 CGPA.</p>
+</div>
+<div class="timeline-card">
+<span class="text-primary font-bold">Leadership Role</span>
+<h3 class="text-xl font-bold mt-2">IIChE Member</h3>
+<p class="text-on-surface-variant text-sm">PDEU Student Chapter</p>
+<p class="mt-4 text-on-surface-variant text-sm">Active contributor to technical seminars and local chapter initiatives.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Skills Section -->
+<section class="max-w-container-max mx-auto px-gutter mb-20 md:mb-32" id="skills">
+<div class="text-center mb-16 reveal">
+<h2 class="text-4xl md:text-5xl font-bold gradient-text mb-4">My Skills</h2>
+<p class="text-on-surface-variant">Core technical proficiency across chemical engineering and digital tools.</p>
+</div>
+<div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 sm:gap-8 stagger-children">
+<div class="flex flex-col items-center gap-4 p-4 sm:p-6 bg-surface rounded-2xl hover:bg-surface-container transition-colors group skill-card">
+<div class="w-16 h-16 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-4xl">science</span>
+</div>
+<span class="font-bold text-sm sm:text-base text-center">Aspen Plus</span>
+</div>
+<div class="flex flex-col items-center gap-4 p-4 sm:p-6 bg-surface rounded-2xl hover:bg-surface-container transition-colors group skill-card">
+<div class="w-16 h-16 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-4xl">terminal</span>
+</div>
+<span class="font-bold text-sm sm:text-base text-center">Python</span>
+</div>
+<div class="flex flex-col items-center gap-4 p-4 sm:p-6 bg-surface rounded-2xl hover:bg-surface-container transition-colors group skill-card">
+<div class="w-16 h-16 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-4xl">calculate</span>
+</div>
+<span class="font-bold text-sm sm:text-base text-center">MATLAB</span>
+</div>
+<div class="flex flex-col items-center gap-4 p-4 sm:p-6 bg-surface rounded-2xl hover:bg-surface-container transition-colors group skill-card">
+<div class="w-16 h-16 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-4xl">factory</span>
+</div>
+<span class="font-bold text-sm sm:text-base text-center">Mass Balance</span>
+</div>
+<div class="flex flex-col items-center gap-4 p-4 sm:p-6 bg-surface rounded-2xl hover:bg-surface-container transition-colors group skill-card">
+<div class="w-16 h-16 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-4xl">eco</span>
+</div>
+<span class="font-bold text-sm sm:text-base text-center text-wrap-pretty">Sustainability</span>
+</div>
+<div class="flex flex-col items-center gap-4 p-4 sm:p-6 bg-surface rounded-2xl hover:bg-surface-container transition-colors group skill-card">
+<div class="w-16 h-16 flex items-center justify-center grayscale group-hover:grayscale-0 transition-all">
+<span class="material-symbols-outlined text-4xl">groups</span>
+</div>
+<span class="font-bold text-sm sm:text-base text-center">Leadership</span>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="max-w-container-max mx-auto px-gutter mb-20 md:mb-32" id="contact">
+<div class="bg-surface p-6 sm:p-12 md:p-20 rounded-[2rem] md:rounded-[3rem] flex flex-col md:flex-row gap-12 md:gap-16">
+<div class="flex-1 space-y-8 reveal-left">
+<h2 class="text-4xl md:text-5xl font-bold gradient-text">Let's work together!</h2>
+<p class="text-on-surface-variant text-lg">I'm open to innovative opportunities in process engineering, environmental tech, and sustainability research. Let's build a greener future.</p>
+<div class="space-y-6">
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined">mail</span>
+</div>
+<div class="min-w-0">
+<p class="text-on-surface-variant text-sm">Email</p>
+<p class="font-bold text-base sm:text-lg break-all">Krupeshpatel1255@gmail.com</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined">phone</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm">Phone</p>
+<p class="font-bold text-lg">+91 98765 43210</p>
+</div>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-14 h-14 bg-primary rounded-full flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm">Address</p>
+<p class="font-bold text-lg">Gandhinagar, Gujarat, India</p>
+</div>
+</div>
+</div>
+</div>
+<div class="flex-1 w-full md:flex md:justify-start reveal-right">
+<form class="w-full space-y-4"><div class="w-full md:max-w-[500px] space-y-4">
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<input placeholder="First Name" type="text" class="w-full bg-[#0f0715] border border-[#2a1454] rounded-lg p-4 text-white focus:border-primary outline-none">
+<input placeholder="Last Name" type="text" class="w-full bg-[#0f0715] border border-[#2a1454] rounded-lg p-4 text-white focus:border-primary outline-none">
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<input placeholder="Email Address" type="email" class="w-full bg-[#0f0715] border border-[#2a1454] rounded-lg p-4 text-white focus:border-primary outline-none">
+<input placeholder="Phone Number" type="tel" class="w-full bg-[#0f0715] border border-[#2a1454] rounded-lg p-4 text-white focus:border-primary outline-none">
+</div>
+<select class="w-full bg-[#0f0715] border border-[#2a1454] rounded-lg p-4 text-white focus:border-primary outline-none">
+<option>—Please choose an option—</option>
+<option>Process Optimization</option>
+<option>Sustainability Research</option>
+<option>ML Modeling</option>
+</select>
+<textarea placeholder="Message" rows="5" class="w-full bg-[#0f0715] border border-[#2a1454] rounded-lg p-4 text-white focus:border-primary outline-none"></textarea>
+<button class="btn-primary w-full py-4 text-lg" type="submit">Send Message</button>
+</div></form>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="py-12 border-t border-[#2a1454] bg-[#0f0715]">
+<div class="max-w-container-max mx-auto px-gutter flex flex-col items-center gap-8">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center font-bold text-xl flex-shrink-0">K</div>
+<span class="font-bold text-2xl tracking-tighter">KRUPESH PATEL</span>
+</div>
+<nav class="flex flex-wrap justify-center gap-8 text-sm font-semibold uppercase tracking-widest text-on-surface-variant">
+<a class="hover:text-primary transition-colors" href="https://www.linkedin.com/in/krupesh-p/">LinkedIn</a>
+<a class="hover:text-primary transition-colors" href="https://www.instagram.com/kp.__.1255/">Instagram</a>
+<a class="hover:text-primary transition-colors" href="#">Facebook</a>
+<a class="hover:text-primary transition-colors" href="https://snapchat.com/t/VBG5wut7">Snapchat</a>
+</nav>
+<p class="text-on-surface-variant text-sm">© 2024 All Rights Reserved by Krupesh Patel</p>
+</div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const menuBtnIcon = document.querySelector('#menu-btn span');
+    
+    if (menu.classList.contains('translate-x-full')) {
+      menu.classList.remove('translate-x-full');
+      menuBtnIcon.textContent = 'close';
+      document.body.style.overflow = 'hidden';
+    } else {
+      menu.classList.add('translate-x-full');
+      menuBtnIcon.textContent = 'menu';
+      document.body.style.overflow = '';
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("active");
+        }
+      });
+    }, observerOptions);
+
+    const animatedElements = document.querySelectorAll(".reveal, .reveal-left, .reveal-right, .scale-up, .stagger-children");
+    animatedElements.forEach(el => observer.observe(el));
+  });
+</script>
+</body></html>
